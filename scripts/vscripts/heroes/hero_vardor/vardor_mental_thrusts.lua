@@ -34,6 +34,8 @@ function MentalThrustsHit(keys)
 		target:SetModifierStackCount( modifierName1, ability, 1 )
 	end
 	--]]
+	local mana = target:GetMana()
+	if target:IsHero and target:IsAlive and mana > 20 and not caster:IsIllusion() then
 	local current_stack = target:GetModifierStackCount( modifier_2 , ability )
 	if current_stack > 0 and yari_stack > 0 then
 		ability:ApplyDataDrivenModifier( caster, target, modifier_1, {})
@@ -48,6 +50,8 @@ function MentalThrustsHit(keys)
 	else
 		return
 	end
+	end
+end
 
 
 

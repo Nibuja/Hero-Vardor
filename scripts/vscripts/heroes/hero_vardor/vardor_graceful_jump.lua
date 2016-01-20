@@ -77,14 +77,6 @@ function DoDamage(caster, target, ability)
 		ApplyDamage(dmg_Table_extra)
 	end
 
-    local stun_duration = current_stack * 0.1
-    if caster:HasModifier("modifier_celestial") then
-        ability:ApplyDataDrivenModifier(caster, target, "modifier_stun", {Duration = stun_duration} )
-    end
-
-
-
-
 end
 
 
